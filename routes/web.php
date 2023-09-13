@@ -28,4 +28,5 @@ Route::get('/admin/logout', [AdminLoginController::class, 'logout'])->name('admi
 route::middleware('admin:admin')->group(function () {
     Route::get('/admin/dashboard', [AdminUserController::class, 'show_dashboard'])->name('admin_dashboard');
     Route::get('/admin/user/show', [AdminUserController::class, 'show_user'])->name('admin_user_show');
+    Route::get('/admin/user/delete/{id}', [AdminUserController::class, 'delete'])->name('admin_user_delete');
 });
