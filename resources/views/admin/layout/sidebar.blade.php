@@ -54,6 +54,13 @@
                  </li>
 
                  <li class="nav-item">
+                     <a href="{{ route('admin_post_show') }}" class="nav-link ">
+                         <i class="nav-icon fas fa-tachometer-alt"></i>
+                         <p> Post </p>
+                     </a>
+                 </li>
+
+                 <li class="nav-item">
                      <a href="#" class="nav-link "data-toggle="modal" data-target="#logoutModal">
                          <i class="nav-icon fas fa-tachometer-alt"></i>
                          <p> Logout </p>

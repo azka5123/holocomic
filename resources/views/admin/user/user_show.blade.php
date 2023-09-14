@@ -5,7 +5,7 @@
 
 @section('main_content')
     <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped " width="100%" cellspacing="10">
+        <table id="example2" class="table table-bordered table-striped " width="100%" cellspacing="10">
             <thead>
                 <tr class="text-center">
                     <th>No.</th>

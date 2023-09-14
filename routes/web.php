@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminLoginController;
+use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminUserController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,10 +24,19 @@ Route::get('/admin/reset-password/{token}/{email}', [AdminLoginController::class
 Route::post('/admin/reset-submit', [AdminLoginController::class, 'reset_submit'])->name('admin_reset_submit');
 Route::get('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin_logout')->middleware('admin:admin');
 
-
 //admin User
-route::middleware('admin:admin')->group(function () {
+Route::middleware('admin:admin')->group(function () {
     Route::get('/admin/dashboard', [AdminUserController::class, 'show_dashboard'])->name('admin_dashboard');
     Route::get('/admin/user/show', [AdminUserController::class, 'show_user'])->name('admin_user_show');
     Route::get('/admin/user/delete/{id}', [AdminUserController::class, 'delete'])->name('admin_user_delete');
+});
+
+//admin Post
+Route::middleware('admin:admin')->group(function () {
+    Route::get('/admin/post/show', [AdminPostController::class, 'show'])->name('admin_post_show');
+    Route::get('/admin/post/create', [AdminPostController::class, 'create'])->name('admin_post_create');
+    Route::post('/admin/post/store', [AdminPostController::class, 'store'])->name('admin_post_store');
+    Route::get('/admin/post/edit/{id}', [AdminPostController::class, 'edit'])->name('admin_post_edit');
+    Route::post('/admin/post/update/{id}', [AdminPostController::class, 'update'])->name('admin_post_update');
+    Route::get('/admin/post/delete/{id}', [AdminPostController::class, 'delete'])->name('admin_post_delete');
 });
