@@ -5,30 +5,40 @@
 
 @section('main_content')
     <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped " width="100%" cellspacing="10">
+        <table id="example2" class="table table-bordered table-striped " width="100%" cellspacing="10">
             <thead>
                 <tr class="text-center">
+                    <th>No.</th>
                     <th>Username</th>
                     <th>Email</th>
+                    <th>No HP</th>
                     <th>action</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Trident</td>
-                    <td>Internet Explorer 4.0</td>
-                    <td class="">
-                        <a href="#" class="btn btn-sm btn-primary px-3 "> <ion-icon name="trash-outline"></ion-icon>
-                            Banned</a>
-                        <a href="#" class="btn btn-sm btn-primary px-3 "> <ion-icon name="trash-outline"></ion-icon>
-                            Delete</a>
-                    </td>
-                </tr>
+                @foreach ($user as $item)
+                    <tr>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $item->name }}</td>
+                        <td>{{ $item->email }}</td>
+                        <td>{{ $item->no_hp }}</td>
+                        <td class="">
+                            <a href="#" class="btn btn-sm btn-primary "> <ion-icon name="ban-outline"></ion-icon>
+                                Banned</a>
+                            <a href="{{ route('admin_user_delete', $item->id) }}" class="btn btn-sm btn-primary"
+                                onclick="return confirm('are u sure?')">
+                                <ion-icon name="trash-outline"></ion-icon>
+                                Delete</a>
+                        </td>
+                    </tr>
+                @endforeach
             </tbody>
             <tfoot>
                 <tr class="text-center">
+                    <th>No.</th>
                     <th>Username</th>
                     <th>Email</th>
+                    <th>No HP</th>
                     <th>action</th>
                 </tr>
             </tfoot>

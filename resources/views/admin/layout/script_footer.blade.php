@@ -53,7 +53,7 @@
                 lengthChange: false,
                 autoWidth: false,
                 searching: false,
-                buttons: ["copy", "csv", "excel", "pdf", "print", "colvis"],
+                buttons: ["copy", "csv", "excel", "pdf", "print", "colvis", ],
             })
             .buttons()
             .container()
