@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminKatsubController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminUserController;
@@ -39,4 +40,17 @@ Route::middleware('admin:admin')->group(function () {
     Route::get('/admin/post/edit/{id}', [AdminPostController::class, 'edit'])->name('admin_post_edit');
     Route::post('/admin/post/update/{id}', [AdminPostController::class, 'update'])->name('admin_post_update');
     Route::get('/admin/post/delete/{id}', [AdminPostController::class, 'delete'])->name('admin_post_delete');
+});
+
+//admin kategori dan sub kategori
+Route::middleware('admin:admin')->group(function () {
+    Route::get('/admin/katsub/show', [AdminKatsubController::class, 'show'])->name('admin_katsub_show');
+    Route::post('/admin/katsub/store/kategori', [AdminKatsubController::class, 'store_kategori'])->name('admin_katsub_kategori_store');
+    Route::get('/admin/katsub/edit/kategori/{id}', [AdminKatsubController::class, 'edit_kategori'])->name('admin_katsub_kategori_edit');
+    Route::post('/admin/katsub/update/kategori/{id}', [AdminKatsubController::class, 'update_kategori'])->name('admin_katsub_kategori_update');
+    Route::get('/admin/katsub/delete/kategori/{id}', [AdminKatsubController::class, 'delete_kategori'])->name('admin_katsub_kategori_delete');
+    Route::post('/admin/katsub/store/sub-kategori', [AdminKatsubController::class, 'store_sub_kategori'])->name('admin_sub_kategori_store');
+    Route::get('/admin/katsub/edit/sub-kategori/{id}', [AdminKatsubController::class, 'edit_sub_kategori'])->name('admin_katsub_sub_kategori_edit');
+    Route::post('/admin/katsub/update/sub-kategori/{id}', [AdminKatsubController::class, 'update_sub_kategori'])->name('admin_katsub_sub_kategori_update');
+    Route::get('/admin/katsub/delete/sub-kategori/{id}', [AdminKatsubController::class, 'delete_sub_kategori'])->name('admin_katsub_sub_kategori_delete');
 });

@@ -61,6 +61,13 @@
                  </li>
 
                  <li class="nav-item">
+                     <a href="{{ route('admin_katsub_show') }}" class="nav-link ">
+                         <i class="nav-icon fas fa-tachometer-alt"></i>
+                         <p> Kategori & Sub Kategori </p>
+                     </a>
+                 </li>
+
+                 <li class="nav-item">
                      <a href="#" class="nav-link "data-toggle="modal" data-target="#logoutModal">
                          <i class="nav-icon fas fa-tachometer-alt"></i>
                          <p> Logout </p>
