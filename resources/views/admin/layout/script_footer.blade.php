@@ -1,6 +1,5 @@
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
-<script src="{{ asset('dist-admin/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap -->
 <script src="{{ asset('dist-admin/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- overlayScrollbars -->
@@ -59,6 +58,15 @@
             .container()
             .appendTo("#example1_wrapper .col-md-6:eq(0)");
         $("#example2").DataTable({
+            paging: true,
+            lengthChange: false,
+            searching: false,
+            ordering: true,
+            info: true,
+            autoWidth: false,
+            responsive: true,
+        });
+        $("#example3").DataTable({
             paging: true,
             lengthChange: false,
             searching: false,
