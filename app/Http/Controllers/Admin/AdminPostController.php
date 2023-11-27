@@ -36,6 +36,7 @@ class AdminPostController extends Controller
 
         $store = new Post();
         $store->image = $final;
+        $store->title  = $request->title;
         $store->desc  = $request->desc;
         $store->id_category = $request->kategori;
         $store->id_sub_category = $request->sub_kategori;
@@ -65,6 +66,7 @@ class AdminPostController extends Controller
             $request->file('photo')->move(public_path('uploads/img/'), $final);
             $update->image = $final;
         }
+        $update->title = $request->title;
         $update->desc = $request->desc;
         $update->id_category = $request->kategori;
         $update->id_sub_category = $request->sub_kategori;

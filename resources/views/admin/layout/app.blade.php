@@ -53,7 +53,7 @@
         </div>
         <!-- /.content-wrapper -->
 
-        @include('admin.layout.footer')
+        {{-- @include('admin.layout.footer') --}}
     </div>
     <!-- ./wrapper -->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
