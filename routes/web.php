@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\AdminKatsubController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\User\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,10 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// homepage
+Route::get('/',[DashboardController::class,'show'])->name('index');
+
+
 //admin login
 Route::get('/admin/login', [AdminLoginController::class, 'login'])->name('admin_login');
 Route::post('/admin/login-submit', [AdminLoginController::class, 'login_submit'])->name('admin_login_submit');

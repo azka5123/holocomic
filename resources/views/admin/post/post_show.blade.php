@@ -11,6 +11,7 @@
                 <tr class="text-center">
                     <th>No.</th>
                     <th>Image</th>
+                    <th>Judul</th>
                     <th>Deskripsi</th>
                     <th>category</th>
                     <th>sub category</th>
@@ -24,6 +25,7 @@
                         <td>
                             <img src="{{ asset('uploads/img/' . $item->image) }}" alt="" style="width:200px;">
                         </td>
+                        <td>{{ $item->title }}</td>
                         <td>{{ $item->desc }}</td>
                         <td>{{ $item->rCategory->category }}</td>
                         <td>{{ $item->rSubCategory->sub_category }}</td>
@@ -42,6 +44,7 @@
                 <tr class="text-center">
                     <th>No.</th>
                     <th>Image</th>
+                    <th>Judul</th>
                     <th>Deskripsi</th>
                     <th>category</th>
                     <th>sub category</th>

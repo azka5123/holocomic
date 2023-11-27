@@ -10,6 +10,10 @@
             <input type="file" class="form-control" name="photo" aria-describedby="">
         </div>
         <div class="form-group">
+            <label for="">Judul</label>
+            <input class="form-control" name="title" >
+        </div>
+        <div class="form-group">
             <label for="">Deskripsi</label>
             <textarea class="form-control" name="desc" rows="4"></textarea>
         </div>
