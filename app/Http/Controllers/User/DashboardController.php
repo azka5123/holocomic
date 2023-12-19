@@ -9,6 +9,16 @@ class DashboardController extends Controller
 {
     public function show()
     {
-        return view("user.layout.app");
+        return view("user.Index");
+    }
+
+    public function detail()
+    {
+        return view("user.DetailPost");
+    }
+
+    public function upload()
+    {
+        return view('user.Upload');
     }
 }
