@@ -1,0 +1,10 @@
+body {
+    background-image: url(../bg4.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.jarak {
+    height: 100px;
+}
